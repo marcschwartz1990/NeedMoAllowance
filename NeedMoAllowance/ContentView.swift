@@ -15,7 +15,9 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(chores) { chore in
-                    ChoreView(chore: chore)
+                    NavigationLink(value: chore) {
+                        ChoreView(chore: chore)
+                    }
                 }
                 .onDelete(perform: deleteChores)
             }
@@ -23,6 +25,7 @@ struct ContentView: View {
                 Button("Add Samples", action: addSampleChores)
             }
             .navigationTitle("Chores")
+            .navigationDestination(for: Chore.self, destination: EditChoreView.init)
         }
     }
 
