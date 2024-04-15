@@ -17,6 +17,7 @@ struct ContentView: View {
                 ForEach(chores) { chore in
                     ChoreView(chore: chore)
                 }
+                .onDelete(perform: deleteChores)
             }
             .toolbar {
                 Button("Add Samples", action: addSampleChores)
@@ -33,6 +34,13 @@ struct ContentView: View {
         modelContext.insert(cleanRoom)
         modelContext.insert(washDishes)
         modelContext.insert(makeBed)
+    }
+
+    func deleteChores(_ indexSet: IndexSet) {
+        for index in indexSet {
+            let chore = chores[index]
+            modelContext.delete(chore)
+        }
     }
 }
 
