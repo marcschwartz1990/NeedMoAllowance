@@ -20,13 +20,13 @@ struct EditChoreView: View {
     }
 }
 
-#Preview {
-    do {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Chore.self)
-        let example = Chore(name: "Clean your room", value: 0.50, isCompleted: false)
-        return EditChoreView(chore: example)
-    } catch {
-        fatalError("Failed to create model container.")
-    }
-}
+//#Preview {
+//    do {
+//        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+//        let container = try ModelContainer(for: Chore.self)
+//        let example = Chore(name: "Clean your room", value: 0.50, isCompleted: false)
+//        return EditChoreView(chore: example)
+//    } catch {
+//        fatalError("Failed to create model container.")
+//    }
+//}

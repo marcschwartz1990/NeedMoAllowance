@@ -11,8 +11,10 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @Query var chores: [Chore]
+    @State private var path = [Chore]()
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List {
                 ForEach(chores) { chore in
                     NavigationLink(value: chore) {
@@ -23,6 +25,7 @@ struct ContentView: View {
             }
             .toolbar {
                 Button("Add Samples", action: addSampleChores)
+                Button("Add Chore", systemImage: "plus", action: addChore)
             }
             .navigationTitle("Chores")
             .navigationDestination(for: Chore.self, destination: EditChoreView.init)
@@ -39,6 +42,12 @@ struct ContentView: View {
         modelContext.insert(makeBed)
     }
 
+    func addChore() {
+        let chore = Chore()
+        modelContext.insert(chore)
+        path = [chore]
+    }
+
     func deleteChores(_ indexSet: IndexSet) {
         for index in indexSet {
             let chore = chores[index]
@@ -49,14 +58,12 @@ struct ContentView: View {
 
 struct ChoreView: View {
     @Environment(\.modelContext) var modelContext
-    let chore: Chore
-
-    @State private var isCompleted = false
+    @Bindable var chore: Chore
     var body: some View {
         HStack {
             Text(chore.name)
             Text(String(chore.value))
-            Toggle("", isOn: $isCompleted)
+            Toggle("", isOn: $chore.isCompleted)
         }
     }
 }
