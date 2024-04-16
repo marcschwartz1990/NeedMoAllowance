@@ -24,22 +24,11 @@ struct ContentView: View {
                 .onDelete(perform: deleteChores)
             }
             .toolbar {
-                Button("Add Samples", action: addSampleChores)
                 Button("Add Chore", systemImage: "plus", action: addChore)
             }
             .navigationTitle("Chores")
             .navigationDestination(for: Chore.self, destination: EditChoreView.init)
         }
-    }
-
-    func addSampleChores() {
-        let cleanRoom = Chore(name: "Clean your room", value: 0.50)
-        let washDishes = Chore(name: "Wash the dishes", value: 0.75)
-        let makeBed = Chore(name: "Make the bed", value: 0.68)
-
-        modelContext.insert(cleanRoom)
-        modelContext.insert(washDishes)
-        modelContext.insert(makeBed)
     }
 
     func addChore() {
@@ -62,7 +51,7 @@ struct ChoreView: View {
     var body: some View {
         HStack {
             Text(chore.name)
-            Text(String(chore.value))
+            Text(String(format: "%.2f", chore.value))
             Toggle("", isOn: $chore.isCompleted)
         }
     }
@@ -70,4 +59,7 @@ struct ChoreView: View {
 
 #Preview {
     ContentView()
+        .onAppear {
+            print(PaymentValue.getPaymentValues())
+        }
 }

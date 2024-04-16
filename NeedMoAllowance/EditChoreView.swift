@@ -10,10 +10,21 @@ import SwiftUI
 
 struct EditChoreView: View {
     @Bindable var chore: Chore
+    @State private var selectedAmount = 1.00
 
     var body: some View {
         Form {
             TextField("Name", text: $chore.name)
+            Picker("Amount", selection: $selectedAmount) {
+                ForEach(PaymentValue.getPaymentValues(), id: \.self) {
+                    Text(String(format: "%.2f", $0))
+                }
+            }
+            Button {
+                chore.value = selectedAmount
+            } label: {
+                Text("Save")
+            }
         }
         .navigationTitle("Edit Chore")
         .navigationBarTitleDisplayMode(.inline)

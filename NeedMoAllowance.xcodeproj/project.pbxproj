@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6948CA482BCE01BA0016AD0E /* PaymentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948CA472BCE01BA0016AD0E /* PaymentValue.swift */; };
 		69DF51FF2BCC4A340024960B /* NeedMoAllowanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF51FE2BCC4A340024960B /* NeedMoAllowanceApp.swift */; };
 		69DF52012BCC4A340024960B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DF52002BCC4A340024960B /* ContentView.swift */; };
 		69DF52032BCC4A360024960B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69DF52022BCC4A360024960B /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6948CA472BCE01BA0016AD0E /* PaymentValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentValue.swift; sourceTree = "<group>"; };
 		69DF51FB2BCC4A340024960B /* NeedMoAllowance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeedMoAllowance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69DF51FE2BCC4A340024960B /* NeedMoAllowanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedMoAllowanceApp.swift; sourceTree = "<group>"; };
 		69DF52002BCC4A340024960B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				69DF51FE2BCC4A340024960B /* NeedMoAllowanceApp.swift */,
 				69DF52002BCC4A340024960B /* ContentView.swift */,
+				6948CA472BCE01BA0016AD0E /* PaymentValue.swift */,
 				69DF520E2BCD5F150024960B /* EditChoreView.swift */,
 				69DF52022BCC4A360024960B /* Assets.xcassets */,
 				69DF52042BCC4A360024960B /* Preview Content */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69DF520F2BCD5F150024960B /* EditChoreView.swift in Sources */,
+				6948CA482BCE01BA0016AD0E /* PaymentValue.swift in Sources */,
 				69DF520D2BCCB4E00024960B /* Chore.swift in Sources */,
 				69DF52012BCC4A340024960B /* ContentView.swift in Sources */,
 				69DF51FF2BCC4A340024960B /* NeedMoAllowanceApp.swift in Sources */,
